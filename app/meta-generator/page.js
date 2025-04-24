@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function MetaGenerator() {
   const [title, setTitle] = useState("");
@@ -117,8 +117,8 @@ export default function MetaGenerator() {
       
       // Générer des descriptions
       const descriptionSuggestions = [
-        `Solutions professionnelles de ${keyword || "qualité"} adaptées à vos besoins. Experts en ${businessDescription || "notre domaine"} avec des années d'expérience pour vous accompagner dans vos projets.`,
-        `Notre équipe d'experts en ${keyword || "ce domaine"} vous propose des services personnalisés pour ${businessDescription || "votre activité"}. Contactez-nous dès aujourd'hui pour un devis gratuit.`,
+        `Solutions professionnelles de ${keyword || "qualité"} adaptées à vos besoins. Experts en ${businessDescription || "notre domaine"} avec des années d&apos;expérience pour vous accompagner dans vos projets.`,
+        `Notre équipe d&apos;experts en ${keyword || "ce domaine"} vous propose des services personnalisés pour ${businessDescription || "votre activité"}. Contactez-nous dès aujourd&apos;hui pour un devis gratuit.`,
         `${businessDescription ? "Spécialistes en " + businessDescription : "Nous offrons"} des solutions innovantes et efficaces en matière de ${keyword || "notre spécialité"}. Qualité et satisfaction garanties.`,
         `Transformez votre approche de ${keyword || "votre activité"} avec nos services adaptés pour ${businessDescription || "votre secteur"}. Accompagnement personnalisé et résultats concrets.`,
         `Des solutions sur mesure pour optimiser vos performances en ${keyword || "votre domaine"}. Notre expertise en ${businessDescription || "notre spécialité"} au service de votre réussite.`
@@ -154,7 +154,7 @@ export default function MetaGenerator() {
       
       setSuggestions(newSuggestions);
       setIsGenerating(false);
-    }, 1500); // Simulation de délai pour donner l'impression de génération
+    }, 1500); // Simulation de délai pour donner l&apos;impression de génération
   };
 
   // Appliquer une suggestion
@@ -285,7 +285,7 @@ export default function MetaGenerator() {
                 type="text" 
                 value={author} 
                 onChange={(e) => setAuthor(e.target.value)} 
-                placeholder="Nom de l'auteur"
+                placeholder="Nom de l&apos;auteur"
                 className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
@@ -413,7 +413,7 @@ export default function MetaGenerator() {
                 placeholder="https://example.com/twitter-image.jpg"
                 className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-              <p className="text-xs text-gray-500 mt-1">Si vide, utilisera l'image Open Graph</p>
+              <p className="text-xs text-gray-500 mt-1">Si vide, utilisera l&apos;image Open Graph</p>
             </div>
           </div>
           
@@ -449,8 +449,8 @@ export default function MetaGenerator() {
       <div className="mt-8 bg-blue-50 p-4 rounded-md border border-blue-200">
         <h3 className="font-semibold text-blue-800 mb-2">Conseils pour des balises meta efficaces :</h3>
         <ul className="text-sm text-blue-700 space-y-1 list-disc pl-5">
-          <li>La balise title est l'un des facteurs SEO les plus importants - faites-la compacte et pertinente.</li>
-          <li>Les meta descriptions n'affectent pas directement le classement mais influencent le taux de clics.</li>
+          <li>La balise title est l&apos;un des facteurs SEO les plus importants - faites-la compacte et pertinente.</li>
+          <li>Les meta descriptions n&apos;affectent pas directement le classement mais influencent le taux de clics.</li>
           <li>Les images Open Graph devraient être au format 1200 x 630 pixels pour un affichage optimal.</li>
           <li>Utilisez des mots-clés naturellement, sans bourrage excessif.</li>
           <li>Personnalisez les balises selon les plateformes (Facebook vs Twitter) pour de meilleurs résultats.</li>
@@ -458,8 +458,8 @@ export default function MetaGenerator() {
       </div>
       
       <div className="mt-8 bg-green-50 p-4 rounded-lg border border-green-200">
-        <h3 className="font-semibold text-green-800 mb-2">Recevez plus d'astuces SEO gratuites</h3>
-        <p className="mb-4 text-green-700">Inscrivez-vous à notre newsletter pour recevoir des conseils exclusifs sur l'optimisation de votre site web.</p>
+        <h3 className="font-semibold text-green-800 mb-2">Recevez plus d&apos;astuces SEO gratuites</h3>
+        <p className="mb-4 text-green-700">Inscrivez-vous à notre newsletter pour recevoir des conseils exclusifs sur l&apos;optimisation de votre site web.</p>
         <form className="flex flex-col sm:flex-row gap-2">
           <input 
             type="email" 
@@ -471,7 +471,7 @@ export default function MetaGenerator() {
             type="submit"
             className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md font-medium"
           >
-            S'inscrire
+            S&apos;inscrire
           </button>
         </form>
       </div>
