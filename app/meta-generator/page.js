@@ -1,32 +1,32 @@
 'use client';
-// import { useState } from 'react';
-import Head from 'next/head';
 
-export default function Home() {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [keywords, setKeywords] = useState('');
-  const [author, setAuthor] = useState('');
-  const [viewport, setViewport] = useState('width=device-width, initial-scale=1.0');
-  const [ogTitle, setOgTitle] = useState('');
-  const [ogDescription, setOgDescription] = useState('');
-  const [ogImage, setOgImage] = useState('');
-  const [ogUrl, setOgUrl] = useState('');
-  const [twitterCard, setTwitterCard] = useState('summary_large_image');
-  const [twitterTitle, setTwitterTitle] = useState('');
-  const [twitterDescription, setTwitterDescription] = useState('');
-  const [twitterImage, setTwitterImage] = useState('');
+import { useState } from 'react';
+
+export default function MetaGenerator() {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [keywords, setKeywords] = useState("");
+  const [author, setAuthor] = useState("");
+  const [viewport, setViewport] = useState("width=device-width, initial-scale=1.0");
+  const [ogTitle, setOgTitle] = useState("");
+  const [ogDescription, setOgDescription] = useState("");
+  const [ogImage, setOgImage] = useState("");
+  const [ogUrl, setOgUrl] = useState("");
+  const [twitterCard, setTwitterCard] = useState("summary_large_image");
+  const [twitterTitle, setTwitterTitle] = useState("");
+  const [twitterDescription, setTwitterDescription] = useState("");
+  const [twitterImage, setTwitterImage] = useState("");
   const [copied, setCopied] = useState(false);
   
   // Ajout des nouveaux états pour la génération de suggestions
-  const [keyword, setKeyword] = useState('');
-  const [businessDescription, setBusinessDescription] = useState('');
+  const [keyword, setKeyword] = useState("");
+  const [businessDescription, setBusinessDescription] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [isGenerating, setIsGenerating] = useState(false);
 
   // Generate the meta tags based on user input
   const generateMetaTags = () => {
-    let metaTags = '';
+    let metaTags = "";
     
     // Basic meta tags
     if (title) metaTags += `<title>${title}</title>\n`;
@@ -60,43 +60,43 @@ export default function Home() {
 
   // Reset all fields
   const resetFields = () => {
-    setTitle('');
-    setDescription('');
-    setKeywords('');
-    setAuthor('');
-    setViewport('width=device-width, initial-scale=1.0');
-    setOgTitle('');
-    setOgDescription('');
-    setOgImage('');
-    setOgUrl('');
-    setTwitterCard('summary_large_image');
-    setTwitterTitle('');
-    setTwitterDescription('');
-    setTwitterImage('');
-    setKeyword('');
-    setBusinessDescription('');
+    setTitle("");
+    setDescription("");
+    setKeywords("");
+    setAuthor("");
+    setViewport("width=device-width, initial-scale=1.0");
+    setOgTitle("");
+    setOgDescription("");
+    setOgImage("");
+    setOgUrl("");
+    setTwitterCard("summary_large_image");
+    setTwitterTitle("");
+    setTwitterDescription("");
+    setTwitterImage("");
+    setKeyword("");
+    setBusinessDescription("");
     setSuggestions([]);
   };
 
   // Fill with sample data
   const fillSampleData = () => {
-    setTitle('Exemple de Page Web - Votre Entreprise');
-    setDescription('Une description captivante de votre page web optimisée pour les moteurs de recherche, entre 150 et 160 caractères.');
-    setKeywords('seo, meta tags, optimisation, moteurs de recherche, balises meta');
-    setAuthor('Votre Nom');
-    setOgTitle('Titre attrayant pour les réseaux sociaux');
-    setOgDescription('Une description plus engageante pour les partages sur les réseaux sociaux.');
-    setOgImage('https://example.com/image.jpg');
-    setOgUrl('https://votresite.com/votre-page');
-    setTwitterTitle('Titre adapté pour Twitter');
-    setTwitterDescription('Description spécifique pour Twitter, concise et attrayante.');
-    setTwitterImage('https://example.com/twitter-image.jpg');
+    setTitle("Exemple de Page Web - Votre Entreprise");
+    setDescription("Une description captivante de votre page web optimisée pour les moteurs de recherche, entre 150 et 160 caractères.");
+    setKeywords("seo, meta tags, optimisation, moteurs de recherche, balises meta");
+    setAuthor("Votre Nom");
+    setOgTitle("Titre attrayant pour les réseaux sociaux");
+    setOgDescription("Une description plus engageante pour les partages sur les réseaux sociaux.");
+    setOgImage("https://example.com/image.jpg");
+    setOgUrl("https://votresite.com/votre-page");
+    setTwitterTitle("Titre adapté pour Twitter");
+    setTwitterDescription("Description spécifique pour Twitter, concise et attrayante.");
+    setTwitterImage("https://example.com/twitter-image.jpg");
   };
 
   // Nouvelle fonction pour générer des suggestions de balises méta
   const generateSuggestions = () => {
     if (!keyword && !businessDescription) {
-      alert('Veuillez saisir au moins un mot-clé ou une description de votre activité');
+      alert("Veuillez saisir au moins un mot-clé ou une description de votre activité");
       return;
     }
 
@@ -108,24 +108,24 @@ export default function Home() {
       
       // Générer des titres
       const titleSuggestions = [
-        `${keyword ? keyword.charAt(0).toUpperCase() + keyword.slice(1) : 'Votre Entreprise'} - Services professionnels et solutions sur mesure`,
-        `${businessDescription ? 'Experts en ' + businessDescription : 'Services'} | ${keyword || 'Votre Domaine'} de qualité`,
-        `${keyword ? keyword.charAt(0).toUpperCase() + keyword.slice(1) : 'Solutions'} innovantes pour votre entreprise | ${businessDescription || 'Votre marché'}`,
-        `Découvrez nos services de ${keyword || 'qualité'} pour ${businessDescription || 'votre entreprise'}`,
-        `${keyword ? keyword.charAt(0).toUpperCase() + keyword.slice(1) : 'Services'} premium - ${businessDescription || 'Votre entreprise'}`
+        `${keyword ? keyword.charAt(0).toUpperCase() + keyword.slice(1) : "Votre Entreprise"} - Services professionnels et solutions sur mesure`,
+        `${businessDescription ? "Experts en " + businessDescription : "Services"} | ${keyword || "Votre Domaine"} de qualité`,
+        `${keyword ? keyword.charAt(0).toUpperCase() + keyword.slice(1) : "Solutions"} innovantes pour votre entreprise | ${businessDescription || "Votre marché"}`,
+        `Découvrez nos services de ${keyword || "qualité"} pour ${businessDescription || "votre entreprise"}`,
+        `${keyword ? keyword.charAt(0).toUpperCase() + keyword.slice(1) : "Services"} premium - ${businessDescription || "Votre entreprise"}`
       ];
       
       // Générer des descriptions
       const descriptionSuggestions = [
-        `Solutions professionnelles de ${keyword || 'qualité'} adaptées à vos besoins. Experts en ${businessDescription || 'notre domaine'} avec des années d'expérience pour vous accompagner dans vos projets.`,
-        `Notre équipe d'experts en ${keyword || 'ce domaine'} vous propose des services personnalisés pour ${businessDescription || 'votre activité'}. Contactez-nous dès aujourd'hui pour un devis gratuit.`,
-        `${businessDescription ? 'Spécialistes en ' + businessDescription : 'Nous offrons'} des solutions innovantes et efficaces en matière de ${keyword || 'notre spécialité'}. Qualité et satisfaction garanties.`,
-        `Transformez votre approche de ${keyword || 'votre activité'} avec nos services adaptés pour ${businessDescription || 'votre secteur'}. Accompagnement personnalisé et résultats concrets.`,
-        `Des solutions sur mesure pour optimiser vos performances en ${keyword || 'votre domaine'}. Notre expertise en ${businessDescription || 'notre spécialité'} au service de votre réussite.`
+        `Solutions professionnelles de ${keyword || "qualité"} adaptées à vos besoins. Experts en ${businessDescription || "notre domaine"} avec des années d'expérience pour vous accompagner dans vos projets.`,
+        `Notre équipe d'experts en ${keyword || "ce domaine"} vous propose des services personnalisés pour ${businessDescription || "votre activité"}. Contactez-nous dès aujourd'hui pour un devis gratuit.`,
+        `${businessDescription ? "Spécialistes en " + businessDescription : "Nous offrons"} des solutions innovantes et efficaces en matière de ${keyword || "notre spécialité"}. Qualité et satisfaction garanties.`,
+        `Transformez votre approche de ${keyword || "votre activité"} avec nos services adaptés pour ${businessDescription || "votre secteur"}. Accompagnement personnalisé et résultats concrets.`,
+        `Des solutions sur mesure pour optimiser vos performances en ${keyword || "votre domaine"}. Notre expertise en ${businessDescription || "notre spécialité"} au service de votre réussite.`
       ];
       
       // Générer des mots-clés
-      let keywordsList = '';
+      let keywordsList = "";
       if (keyword) {
         const variations = [
           keyword,
@@ -135,12 +135,12 @@ export default function Home() {
           `${keyword} entreprise`,
           `meilleur ${keyword}`,
           `${keyword} sur mesure`,
-          `${keyword} ${businessDescription || 'personnalisé'}`
+          `${keyword} ${businessDescription || "personnalisé"}`
         ];
-        keywordsList = variations.join(', ');
+        keywordsList = variations.join(", ");
       } else if (businessDescription) {
-        const words = businessDescription.split(' ').filter(word => word.length > 3);
-        keywordsList = words.join(', ') + ', services, expertise, solutions, professionnels';
+        const words = businessDescription.split(" ").filter(word => word.length > 3);
+        keywordsList = words.join(", ") + ", services, expertise, solutions, professionnels";
       }
       
       // Ajouter les suggestions
@@ -172,12 +172,6 @@ export default function Home() {
 
   return (
     <div className="flex flex-col p-6 max-w-4xl mx-auto bg-white rounded-lg shadow-lg">
-      <Head>
-        <title>Générateur de Balises Meta SEO</title>
-        <meta name="description" content="Créez facilement des balises meta optimisées pour améliorer votre SEO" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <h1 className="text-2xl font-bold text-center text-blue-600 mb-6">Générateur de Balises Meta SEO</h1>
       
       {/* Nouvelle section pour la génération de suggestions */}
@@ -210,7 +204,7 @@ export default function Home() {
           disabled={isGenerating}
           className="w-full py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:bg-indigo-400"
         >
-          {isGenerating ? 'Génération en cours...' : 'Générer des suggestions de balises meta'}
+          {isGenerating ? "Génération en cours..." : "Générer des suggestions de balises meta"}
         </button>
       </div>
       
@@ -254,7 +248,7 @@ export default function Home() {
               />
               <div className="flex justify-between items-center mt-1">
                 <p className="text-xs text-gray-500">Recommandé: 50-60 caractères</p>
-                <p className={`text-xs font-medium ${title.length > 60 ? 'text-red-500' : title.length > 50 ? 'text-green-600' : 'text-gray-500'}`}>
+                <p className={`text-xs font-medium ${title.length > 60 ? "text-red-500" : title.length > 50 ? "text-green-600" : "text-gray-500"}`}>
                   {title.length} caractères
                 </p>
               </div>
@@ -269,7 +263,7 @@ export default function Home() {
               />
               <div className="flex justify-between items-center mt-1">
                 <p className="text-xs text-gray-500">Recommandé: 150-160 caractères</p>
-                <p className={`text-xs font-medium ${description.length > 160 ? 'text-red-500' : description.length > 145 ? 'text-green-600' : 'text-gray-500'}`}>
+                <p className={`text-xs font-medium ${description.length > 160 ? "text-red-500" : description.length > 145 ? "text-green-600" : "text-gray-500"}`}>
                   {description.length} caractères
                 </p>
               </div>
@@ -319,7 +313,7 @@ export default function Home() {
               />
               <div className="flex justify-between items-center mt-1">
                 <p className="text-xs text-gray-500">Si vide, utilisera le titre principal</p>
-                <p className={`text-xs font-medium ${ogTitle.length > 90 ? 'text-red-500' : 'text-gray-500'}`}>
+                <p className={`text-xs font-medium ${ogTitle.length > 90 ? "text-red-500" : "text-gray-500"}`}>
                   {ogTitle.length} caractères
                 </p>
               </div>
@@ -334,7 +328,7 @@ export default function Home() {
               />
               <div className="flex justify-between items-center mt-1">
                 <p className="text-xs text-gray-500">Si vide, utilisera la description principale</p>
-                <p className={`text-xs font-medium ${ogDescription.length > 200 ? 'text-red-500' : 'text-gray-500'}`}>
+                <p className={`text-xs font-medium ${ogDescription.length > 200 ? "text-red-500" : "text-gray-500"}`}>
                   {ogDescription.length} caractères
                 </p>
               </div>
@@ -390,7 +384,7 @@ export default function Home() {
               />
               <div className="flex justify-between items-center mt-1">
                 <p className="text-xs text-gray-500">Si vide, utilisera le titre Open Graph ou principal</p>
-                <p className={`text-xs font-medium ${twitterTitle.length > 70 ? 'text-red-500' : 'text-gray-500'}`}>
+                <p className={`text-xs font-medium ${twitterTitle.length > 70 ? "text-red-500" : "text-gray-500"}`}>
                   {twitterTitle.length} caractères
                 </p>
               </div>
@@ -405,7 +399,7 @@ export default function Home() {
               />
               <div className="flex justify-between items-center mt-1">
                 <p className="text-xs text-gray-500">Si vide, utilisera la description Open Graph ou principale</p>
-                <p className={`text-xs font-medium ${twitterDescription.length > 200 ? 'text-red-500' : 'text-gray-500'}`}>
+                <p className={`text-xs font-medium ${twitterDescription.length > 200 ? "text-red-500" : "text-gray-500"}`}>
                   {twitterDescription.length} caractères
                 </p>
               </div>
@@ -433,7 +427,7 @@ export default function Home() {
                 onClick={copyToClipboard}
                 className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
-                {copied ? 'Copié !' : 'Copier le code'}
+                {copied ? "Copié !" : "Copier le code"}
               </button>
               <button 
                 onClick={resetFields}
